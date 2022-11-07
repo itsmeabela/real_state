@@ -9,23 +9,23 @@ import styles from "../styles/Navbar.module.css";
 const Menu = () => (
   <>
     <p>
-      <Link href={"/"}>
-        Home <FcHome />
+      <Link href={"/"} passHref>
+        <FcHome /> Home
       </Link>
     </p>
     <p>
-      <Link href={"/search"}>
-        Search <BsSearch />
+      <Link href={"/search"} passHref>
+        <BsSearch /> Search
       </Link>
     </p>
     <p>
-      <Link href={"/search?purpose=for-sale"}>
-        Buy a Property <FcAbout />
+      <Link href={"/search?purpose=for-sale"} passHref>
+        <FcAbout /> Buy a Property
       </Link>
     </p>
     <p>
-      <Link href={"/search?purpose=for-rent"}>
-        Rent A Property <FiKey />
+      <Link href={"/search?purpose=for-rent"} passHref>
+        <FiKey /> Rent A Property
       </Link>
     </p>
   </>

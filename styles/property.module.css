@@ -9,7 +9,10 @@
   width: 15rem;
   min-height: 395px;
 }
-
+.container:hover {
+  border-radius: 10px;
+  box-shadow: 0 0 12px black;
+}
 .container .img {
   width: 100%;
   min-height: 229px;
