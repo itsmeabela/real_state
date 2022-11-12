@@ -9,11 +9,20 @@ const Layout = ({ children }) => {
         <title>Real Estates | website</title>
       </Head>
       <div>
+        <marquee
+          behavior="sliding"
+          direction="vertical"
+          style={{ backgroundColor: "red", color: "white" }}
+        >
+          ⚠️ Still on Work ⚠️
+        </marquee>
         <header>
           <Navbar />
         </header>
         <main>{children}</main>
-        <footer>footer</footer>
+        <footer style={{ textAlign: "center", marginTop: "2rem" }}>
+          CopyRight {new Date().getFullYear()}
+        </footer>
       </div>
     </>
   );

@@ -3,8 +3,8 @@ import Image from "next/image";
 //style
 import style from "../styles/property.module.css";
 //icons
-import { faBed, FaBath, FaBed } from "react-icons/fa";
-import { BsFacebook, BsGridFill } from "react-icons/bs";
+import { FaBath, FaBed } from "react-icons/fa";
+import { BsGridFill } from "react-icons/bs";
 import { GoVerified } from "react-icons/go";
 //images
 import NoImage from "../Assets/images/no_image.jpg";
