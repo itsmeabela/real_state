@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { MdCancel } from "react-icons/md";
 import Image from "next/image";
-import Select from "react-select";
+
 import { filterData, getFilterValues } from "../utils/filterData";
 const SearchFilter = () => {
   const [filters, setFilter] = useState(filterData);
@@ -15,7 +15,9 @@ const SearchFilter = () => {
 
     const values = getFilterValues(filterValues);
     values.forEach((item) => {
-      query[item.name] = item.value;
+      if (item.value && filterValues?.[item.name]) {
+        query[item.name] = item.value;
+      }
     });
 
     router.push({ pathname: path, query });
