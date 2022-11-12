@@ -37,7 +37,6 @@ const Banner = ({
 );
 
 export default function Home({ propertiesForSale, propertiesForRent }) {
-  console.log(propertiesForRent, propertiesForSale);
   return (
     <div>
       <Banner
@@ -68,7 +67,7 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
       />
       <div className={style.list}>
-        {propertiesForRent.map((property) => (
+        {propertiesForSale.map((property) => (
           <Property property={property} key={property.id} />
         ))}
       </div>

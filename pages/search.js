@@ -5,12 +5,12 @@ import { BsFilter } from "react-icons/bs";
 import SearchFilter from "../components/SearchFilter";
 import style from "../styles/Search.module.css";
 import Property from "../components/Property";
-import NoImage from "../Assets/images/no_image.jpg";
+import noItem from "../Assets/images/no_item.webp";
 import { fetchApi, baseUrl } from "../utils/fetchApi";
+
 const Search = ({ properties }) => {
   const [searchFilter, setSearchFilter] = useState(false);
   const router = useRouter();
-  console.log(router);
   return (
     <div>
       <div
@@ -29,7 +29,7 @@ const Search = ({ properties }) => {
       </div>
       {properties.length === 0 && (
         <div style={style.container}>
-          <Image src={NoImage} alt="no image" width={50} height={50} />
+          <Image src={noItem} alt="no image" width={50} height={50} />
         </div>
       )}
     </div>
