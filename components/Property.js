@@ -23,18 +23,18 @@ const Property = ({
     externalID,
   },
 }) => (
-  <Link href={`/property/${externalID}`}>
-    <div className={style.container}>
+  <div className={style.container}>
+    <Link href={`/property/${externalID}`}>
       <Image
         className={style.img}
         src={coverPhoto ? coverPhoto.url : NoImage}
         alt="house"
-        width={400}
-        height={260}
+        width={900}
+        height={360}
       />
 
       <div className={style.content}>
-        <div>{isVerified && <GoVerified />}</div>
+        <div className={style.green}>{isVerified && <GoVerified />}</div>
         <span className={style.grey}>
           AED {millify(price)}
           {rentFrequency && `/${rentFrequency}`}
@@ -42,14 +42,19 @@ const Property = ({
       </div>
       <div className={style.flex1}>
         <div className={style.flex2}>
-          <Image src={agency?.logo?.url} width={70} height={50} alt="logo" />
-          {rooms}
-          <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />
+          <div>
+            <Image src={agency?.logo?.url} width={70} height={50} alt="logo" />
+          </div>
+
+          <h4>
+            {rooms} <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft{" "}
+            <BsGridFill />
+          </h4>
         </div>
-        <h3>{title > 10 ? `${title.slice(0, 10)}...` : title}</h3>
+        <h3>{title > 30 ? `${title.slice(0, 10)}...` : title}</h3>
       </div>
-    </div>
-  </Link>
+    </Link>
+  </div>
 );
 
 export default Property;

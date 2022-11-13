@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { FcMenu, FcHome, FcAbout } from "react-icons/fc";
 import { BsSearch } from "react-icons/bs";
 import { FiKey } from "react-icons/fi";
+import logo from "../Assets/images/real-estate.webp";
 //styles
 import styles from "../styles/Navbar.module.css";
 
@@ -38,7 +40,9 @@ const Navbar = () => {
     <div className={styles.navbar}>
       <div className={styles.navbarlinks}>
         <div className={styles.logo}>
-          <Link href={"/"}>Real Estate</Link>
+          <Link href={"/"}>
+            <Image src={logo} width={70} height={40} alt="logo" />
+          </Link>
         </div>
         <div className={styles.linksContainer}>
           <Menu />

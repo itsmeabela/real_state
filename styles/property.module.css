@@ -4,32 +4,51 @@
   justify-content: center;
   flex-wrap: wrap;
   width: fit-content;
-
   font-size: 15px;
-  width: 15rem;
+  width: 100%;
   min-height: 395px;
+  padding-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+  position: relative;
 }
-.container:hover {
-  border-radius: 10px;
-  box-shadow: 0 0 12px black;
+.container:hover{
+  transform: translateY(-4px);
 }
+.container:hover:before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 5%;
+  width: 90%;
+  height: 20px;
+  background: rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  filter: blur(10px);
+}
+
 .container .img {
   width: 100%;
-  min-height: 229px;
   border-radius: 10px;
 }
 
 .container .flex1 {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
 }
 
-.container .flex2 {
+.container .flex1 .flex2 {
   display: flex;
+  width: 100%;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
+.flex2 h4{
+  color: blue;
+}
+
 .container .flex h3 {
   width: 100%;
   display: block;
@@ -39,6 +58,9 @@
   align-items: cneter;
   justify-content: flex-end;
   gap: 0.5rem;
+}
+.content .green{
+  color: green;
 }
 .grey {
   color: rgb(110, 110, 110);

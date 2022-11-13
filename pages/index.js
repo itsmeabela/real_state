@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
-import style from "../styles/Home.module.css";
 
+import style from "../styles/Home.module.css";
+import image from "../Assets/images/no_image.jpg";
 //componetns
 import Property from "../components/Property";
 //api
@@ -18,19 +18,29 @@ const Banner = ({
   imageUrl,
 }) => (
   <>
-    <div className={style.container}>
-      <Image src={imageUrl} width={500} height={300} alt="Banner" />
-      <div>
-        <h1>{purpose}</h1>
-        <h2>
-          {title} <br /> {title2}
-        </h2>
-        <p>
-          {desc1} <br /> {desc2}
-        </p>
-        <button>
-          <Link href={linkName}>{buttonText}</Link>
-        </button>
+    <div
+      className={style.container}
+      style={{
+        backgroundImage: `url(${imageUrl})`,
+        backgroundSize: "cover",
+        width: "100%",
+        height: "90vh",
+        borderRadius: "10px",
+      }}
+    >
+      {/* <Image src={imageUrl} width={500} height={300} alt="Banner" /> */}
+      <div className={style.content}>
+        <div className={style.info}>
+          <h1 className={style.title}>{purpose}</h1>
+          <h2 className={style.subtitle}>
+            {title} <br /> {title2}
+          </h2>
+          <p className={style.description}>
+            {desc1} <br /> {desc2}
+          </p>
+        </div>
+
+        <Link href={linkName}>{buttonText}</Link>
       </div>
     </div>
   </>
@@ -43,14 +53,16 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         purpose="RENT A HOME"
         title="Rent Homes For"
         title2="Everyone"
-        desc1="Explore Apartments,Villas,Homes"
+        desc1="Explore Apartments, Villas, Homes"
         desc2="and more"
         buttonText="Explore Renting"
         linkName="/search?purpose=for-rent"
-        imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
+        imageUrl="https://img.freepik.com/free-photo/living-room-with-yellow-armchair-empty-dark-blue-wall-background-3d-rendering_41470-3901.jpg?w=900&t=st=1668329853~exp=1668330453~hmac=aae4ec659b03ee2de31736be67bf11f8a54acbc806edf226b55612c44534f381"
       />
-      <hr />
-      <br />
+
+      <h1>Featured</h1>
+      <div className={style.underline} />
+
       <div className={style.list}>
         {propertiesForRent.map((property) => (
           <Property property={property} key={property.id} />
@@ -64,8 +76,10 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         desc2=" villas and more"
         buttonText="Explore Buying"
         linkName="/search?purpose=for-sale"
-        imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
+        imageUrl="https://img.freepik.com/free-photo/modern-kitchen-interior-bright-colors_181624-61502.jpg?w=740&t=st=1668339116~exp=1668339716~hmac=2edd3fc6042cb170fd07ec360272abd02bb706ad5931066c35e508ff29d5a023"
       />
+      <h1>Featured</h1>
+      <div className={style.underline} />
       <div className={style.list}>
         {propertiesForSale.map((property) => (
           <Property property={property} key={property.id} />

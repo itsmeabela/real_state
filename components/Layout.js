@@ -9,13 +9,6 @@ const Layout = ({ children }) => {
         <title>Real Estates | website</title>
       </Head>
       <div>
-        <marquee
-          behavior="sliding"
-          direction="vertical"
-          style={{ backgroundColor: "red", color: "white" }}
-        >
-          ⚠️ Still on Work ⚠️
-        </marquee>
         <header>
           <Navbar />
         </header>
