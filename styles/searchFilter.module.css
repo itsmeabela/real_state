@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem;
+  border-radius: 5px;
+  background-color: rgba(145, 141, 141, 0.2);
+  transition: all 0.5s ease-in-out;
+  animation: fadein 0.5s alternate;
+  position: relative;
+}
+@keyframes fadein {
+  0% {
+    transform: translateY(-2px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.content {
+  flex: auto;
+
+  padding: 2rem 0.5rem;
+  flex-wrap: wrap;
+
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.content select {
+  border-radius: 5px;
+  padding: 2px;
+}
+.searchcontainer {
+  position: absolute;
+  left: 20%;
+  bottom: 25px;
+}

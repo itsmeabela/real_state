@@ -11,17 +11,18 @@
   transition: transform 0.3s ease;
   position: relative;
 }
-.container:hover{
+
+.container:hover {
   transform: translateY(-4px);
 }
 .container:hover:before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 5%;
   width: 90%;
   height: 20px;
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 50%;
   filter: blur(10px);
 }
@@ -45,7 +46,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.flex2 h4{
+.flex2 h4 {
   color: blue;
 }
 
@@ -59,7 +60,8 @@
   justify-content: flex-end;
   gap: 0.5rem;
 }
-.content .green{
+
+.content .green {
   color: green;
 }
 .grey {

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { MdCancel } from "react-icons/md";
 import Image from "next/image";
 import { FaSearch, FaSpinner } from "react-icons/fa";
-
+import style from "../styles/searchFilter.module.css";
 import { filterData, getFilterValues } from "../utils/filterData";
 
 const SearchFilter = () => {
@@ -46,9 +46,9 @@ const SearchFilter = () => {
   }, [searchTerm]);
 
   return (
-    <div>
+    <div className={style.container}>
       {filters.map((filter) => (
-        <div key={filter.queryName}>
+        <div key={filter.queryName} className={style.content}>
           <select
             placeholder={filter.queryName}
             onChange={(e) =>
@@ -69,7 +69,7 @@ const SearchFilter = () => {
           </select>
         </div>
       ))}
-      <div flexDir="column">
+      <div className={style.searchcontainer}>
         <FaSearch
           onClick={() => setShowLocations(!showLocations)}
           border="1px"

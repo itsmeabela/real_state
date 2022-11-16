@@ -1,12 +1,46 @@
 .container {
   display: flex;
-  cursor: pointer;
-  background-color: rgb(153, 153, 153);
-  font-weight: bold;
-  font-size: large;
-  justify-content: center;
+  flex-direction: column;
+
+  margin-top: 4.5rem;
+}
+.filtercontain {
+  display: flex;
+  justify-content: flex-end;
+
   align-items: center;
-  gap: 1rem;
-  border-top: 2px solid black;
-  padding: 0.3rem;
+}
+.filter {
+  display: flex;
+  align-items: center;
+  background-color: rgb(143, 143, 143);
+  padding: 5px;
+  color: #fff;
+  gap: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.filter:hover {
+  background-color: grey;
+}
+.container h2 {
+  font-size: var(--fontMid);
+}
+.container h3 {
+  margin-bottom: 1rem;
+}
+.list {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 2rem;
+}
+.underline {
+  width: 5rem;
+  height: 3px;
+  border-radius: 50px;
+  background-color: blue;
+  margin-bottom: 1rem;
 }

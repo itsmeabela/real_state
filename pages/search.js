@@ -5,31 +5,35 @@ import { BsFilter } from "react-icons/bs";
 import SearchFilter from "../components/SearchFilter";
 import style from "../styles/Search.module.css";
 import Property from "../components/Property";
-import noItem from "../Assets/images/no_item.webp";
+import NoImage from "../Assets/images/no_image.jpg";
 import { fetchApi, baseUrl } from "../utils/fetchApi";
 
 const Search = ({ properties }) => {
   const [searchFilter, setSearchFilter] = useState(false);
   const router = useRouter();
+
   return (
-    <div>
-      <div
-        className={style.container}
-        onClick={() => setSearchFilter((prevState) => !prevState)}
-      >
-        <h3>Search Property By Filters </h3>
-        <BsFilter />
+    <div className={style.container}>
+      <div className={style.filtercontain}>
+        <div
+          onClick={() => setSearchFilter((prevState) => !prevState)}
+          className={style.filter}
+        >
+          <h2>Filters </h2>
+          <BsFilter />
+        </div>
       </div>
       {searchFilter && <SearchFilter />}
       <h3>Properties {router.query.purpose}</h3>
-      <div>
+      <div className={style.underline} />
+      <div className={style.list}>
         {properties.map((property) => (
           <Property key={property.id} property={property} />
         ))}
       </div>
       {properties.length === 0 && (
         <div style={style.container}>
-          <Image src={noItem} alt="no image" width={50} height={50} />
+          <Image src={NoImage} alt="no image" width={50} height={50} />
         </div>
       )}
     </div>
